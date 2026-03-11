@@ -6,6 +6,16 @@ import App from './App';
 import { store } from './store/store';
 import reportWebVitals from './reportWebVitals';
 
+// Single Page Apps for GitHub Pages
+// https://github.com/rafgraph/spa-github-pages
+(function() {
+  var redirect = window.sessionStorage.redirect;
+  delete window.sessionStorage.redirect;
+  if (redirect && redirect !== window.location.href) {
+    window.history.replaceState(null, '', redirect);
+  }
+})();
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
